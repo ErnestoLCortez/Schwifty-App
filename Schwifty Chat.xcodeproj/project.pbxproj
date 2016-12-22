@@ -54,14 +54,22 @@
 		DE208AC71E0C75A500DAEB31 /* Schwifty Chat */ = {
 			isa = PBXGroup;
 			children = (
-				DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */,
+				DE208ADA1E0C75FD00DAEB31 /* Supporting Files */,
 				DE208ACA1E0C75A500DAEB31 /* ViewController.swift */,
 				DE208ACC1E0C75A500DAEB31 /* Main.storyboard */,
+			);
+			path = "Schwifty Chat";
+			sourceTree = "<group>";
+		};
+		DE208ADA1E0C75FD00DAEB31 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */,
 				DE208ACF1E0C75A600DAEB31 /* Assets.xcassets */,
 				DE208AD11E0C75A600DAEB31 /* LaunchScreen.storyboard */,
 				DE208AD41E0C75A600DAEB31 /* Info.plist */,
 			);
-			path = "Schwifty Chat";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
