@@ -6,5 +6,9 @@ target 'Schwifty Chat' do
   use_frameworks!
 
   # Pods for Schwifty Chat
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'
 
 end
