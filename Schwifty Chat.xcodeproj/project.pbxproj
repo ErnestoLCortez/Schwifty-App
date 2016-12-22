@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		624732C5D6EB2E99E3D89100 /* Pods_Schwifty_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE5E8878DA6CA4F9466BC4 /* Pods_Schwifty_Chat.framework */; };
 		DE208AC91E0C75A500DAEB31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */; };
 		DE208ACB1E0C75A500DAEB31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208ACA1E0C75A500DAEB31 /* ViewController.swift */; };
 		DE208ACE1E0C75A500DAEB31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE208ACC1E0C75A500DAEB31 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BBE5E8878DA6CA4F9466BC4 /* Pods_Schwifty_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schwifty_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E34D5C6E1D76A17ABA18882 /* Pods-Schwifty Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schwifty Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schwifty Chat/Pods-Schwifty Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		C33CEF0D77F49E99D94055CD /* Pods-Schwifty Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schwifty Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schwifty Chat/Pods-Schwifty Chat.release.xcconfig"; sourceTree = "<group>"; };
 		DE208AC51E0C75A500DAEB31 /* Schwifty Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schwifty Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE208ACA1E0C75A500DAEB31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				624732C5D6EB2E99E3D89100 /* Pods_Schwifty_Chat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2920312D7D0E6B68C35C3C79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E34D5C6E1D76A17ABA18882 /* Pods-Schwifty Chat.debug.xcconfig */,
+				C33CEF0D77F49E99D94055CD /* Pods-Schwifty Chat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA82C1CC6BB68D666AA24B22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BBE5E8878DA6CA4F9466BC4 /* Pods_Schwifty_Chat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE208ABC1E0C75A500DAEB31 = {
 			isa = PBXGroup;
 			children = (
 				DE208AC71E0C75A500DAEB31 /* Schwifty Chat */,
 				DE208AC61E0C75A500DAEB31 /* Products */,
+				2920312D7D0E6B68C35C3C79 /* Pods */,
+				DA82C1CC6BB68D666AA24B22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE208AD71E0C75A600DAEB31 /* Build configuration list for PBXNativeTarget "Schwifty Chat" */;
 			buildPhases = (
+				98E2EEE6FDCFBC52C6FAA026 /* [CP] Check Pods Manifest.lock */,
 				DE208AC11E0C75A500DAEB31 /* Sources */,
 				DE208AC21E0C75A500DAEB31 /* Frameworks */,
 				DE208AC31E0C75A500DAEB31 /* Resources */,
+				51D77FAA392A205350476E13 /* [CP] Embed Pods Frameworks */,
+				405D1A0BE13921D90AE0A302 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +166,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		405D1A0BE13921D90AE0A302 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Schwifty Chat/Pods-Schwifty Chat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51D77FAA392A205350476E13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Schwifty Chat/Pods-Schwifty Chat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98E2EEE6FDCFBC52C6FAA026 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE208AC11E0C75A500DAEB31 /* Sources */ = {
@@ -265,6 +340,7 @@
 		};
 		DE208AD81E0C75A600DAEB31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E34D5C6E1D76A17ABA18882 /* Pods-Schwifty Chat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5LFWG68828;
@@ -278,6 +354,7 @@
 		};
 		DE208AD91E0C75A600DAEB31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C33CEF0D77F49E99D94055CD /* Pods-Schwifty Chat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5LFWG68828;

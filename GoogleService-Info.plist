@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>263200505862-ca1c3pgsp4v13eevdqe0h9u216lug8fs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.263200505862-ca1c3pgsp4v13eevdqe0h9u216lug8fs</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC1lP_GW3ygH80Ay2aNOTqA__PP0wCcMXE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>263200505862</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>edu.csumb.louie.Schwifty-Chat</string>
+	<key>PROJECT_ID</key>
+	<string>schwifty-chat-e6066</string>
+	<key>STORAGE_BUCKET</key>
+	<string>schwifty-chat-e6066.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:263200505862:ios:b4dfb2d2cfc1f12c</string>
+	<key>DATABASE_URL</key>
+	<string>https://schwifty-chat-e6066.firebaseio.com</string>
+</dict>
+</plist>
