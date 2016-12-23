@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		624732C5D6EB2E99E3D89100 /* Pods_Schwifty_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE5E8878DA6CA4F9466BC4 /* Pods_Schwifty_Chat.framework */; };
 		DE208AC91E0C75A500DAEB31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */; };
-		DE208ACB1E0C75A500DAEB31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208ACA1E0C75A500DAEB31 /* ViewController.swift */; };
-		DE208ACE1E0C75A500DAEB31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE208ACC1E0C75A500DAEB31 /* Main.storyboard */; };
 		DE208AD01E0C75A600DAEB31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE208ACF1E0C75A600DAEB31 /* Assets.xcassets */; };
 		DE208AD31E0C75A600DAEB31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE208AD11E0C75A600DAEB31 /* LaunchScreen.storyboard */; };
+		DE208ADC1E0CA0EC00DAEB31 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208ADB1E0CA0EC00DAEB31 /* SignInViewController.swift */; };
+		DE208ADE1E0CA21800DAEB31 /* HelperObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208ADD1E0CA21800DAEB31 /* HelperObjects.swift */; };
+		DE208AE01E0D9FD700DAEB31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE208ADF1E0D9FD700DAEB31 /* GoogleService-Info.plist */; };
+		DE208AE41E0DB06E00DAEB31 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208AE31E0DB06E00DAEB31 /* ImageViewController.swift */; };
+		DE208AE61E0DB0D800DAEB31 /* ChatDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208AE51E0DB0D800DAEB31 /* ChatDetailTableViewController.swift */; };
+		DE208AE81E0DB5BC00DAEB31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE208AE71E0DB5BC00DAEB31 /* Main.storyboard */; };
+		DE208AEA1E0DB8D900DAEB31 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208AE91E0DB8D900DAEB31 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +26,16 @@
 		C33CEF0D77F49E99D94055CD /* Pods-Schwifty Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schwifty Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schwifty Chat/Pods-Schwifty Chat.release.xcconfig"; sourceTree = "<group>"; };
 		DE208AC51E0C75A500DAEB31 /* Schwifty Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schwifty Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE208ACA1E0C75A500DAEB31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DE208ACD1E0C75A500DAEB31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE208ACF1E0C75A600DAEB31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE208AD21E0C75A600DAEB31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE208AD41E0C75A600DAEB31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE208ADB1E0CA0EC00DAEB31 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ../SignInViewController.swift; sourceTree = "<group>"; };
+		DE208ADD1E0CA21800DAEB31 /* HelperObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperObjects.swift; path = ../HelperObjects.swift; sourceTree = "<group>"; };
+		DE208ADF1E0D9FD700DAEB31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE208AE31E0DB06E00DAEB31 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		DE208AE51E0DB0D800DAEB31 /* ChatDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDetailTableViewController.swift; sourceTree = "<group>"; };
+		DE208AE71E0DB5BC00DAEB31 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DE208AE91E0DB8D900DAEB31 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 		DE208ABC1E0C75A500DAEB31 = {
 			isa = PBXGroup;
 			children = (
+				DE208ADF1E0D9FD700DAEB31 /* GoogleService-Info.plist */,
 				DE208AC71E0C75A500DAEB31 /* Schwifty Chat */,
 				DE208AC61E0C75A500DAEB31 /* Products */,
 				2920312D7D0E6B68C35C3C79 /* Pods */,
@@ -78,9 +89,13 @@
 		DE208AC71E0C75A500DAEB31 /* Schwifty Chat */ = {
 			isa = PBXGroup;
 			children = (
+				DE208AE91E0DB8D900DAEB31 /* ChatViewController.swift */,
+				DE208AE71E0DB5BC00DAEB31 /* Main.storyboard */,
+				DE208AE31E0DB06E00DAEB31 /* ImageViewController.swift */,
+				DE208AE51E0DB0D800DAEB31 /* ChatDetailTableViewController.swift */,
+				DE208ADB1E0CA0EC00DAEB31 /* SignInViewController.swift */,
+				DE208ADD1E0CA21800DAEB31 /* HelperObjects.swift */,
 				DE208ADA1E0C75FD00DAEB31 /* Supporting Files */,
-				DE208ACA1E0C75A500DAEB31 /* ViewController.swift */,
-				DE208ACC1E0C75A500DAEB31 /* Main.storyboard */,
 			);
 			path = "Schwifty Chat";
 			sourceTree = "<group>";
@@ -160,8 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE208AD31E0C75A600DAEB31 /* LaunchScreen.storyboard in Resources */,
+				DE208AE01E0D9FD700DAEB31 /* GoogleService-Info.plist in Resources */,
 				DE208AD01E0C75A600DAEB31 /* Assets.xcassets in Resources */,
-				DE208ACE1E0C75A500DAEB31 /* Main.storyboard in Resources */,
+				DE208AE81E0DB5BC00DAEB31 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,22 +236,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE208ACB1E0C75A500DAEB31 /* ViewController.swift in Sources */,
+				DE208AE61E0DB0D800DAEB31 /* ChatDetailTableViewController.swift in Sources */,
 				DE208AC91E0C75A500DAEB31 /* AppDelegate.swift in Sources */,
+				DE208ADC1E0CA0EC00DAEB31 /* SignInViewController.swift in Sources */,
+				DE208AEA1E0DB8D900DAEB31 /* ChatViewController.swift in Sources */,
+				DE208AE41E0DB06E00DAEB31 /* ImageViewController.swift in Sources */,
+				DE208ADE1E0CA21800DAEB31 /* HelperObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DE208ACC1E0C75A500DAEB31 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE208ACD1E0C75A500DAEB31 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DE208AD11E0C75A600DAEB31 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -385,6 +397,7 @@
 				DE208AD91E0C75A600DAEB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
