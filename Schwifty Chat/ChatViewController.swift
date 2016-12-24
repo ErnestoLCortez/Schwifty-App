@@ -130,7 +130,7 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
             } else if let URL = URL(string: imageURL), let data = try? Data(contentsOf: URL) {
                 cell.imageView?.image = UIImage.init(data: data)
             }
-            cell.textLabel?.text = "sent by: \(name)"
+            cell.textLabel?.text = "sent by: \(name!)"
         } else {
             let text = message[Constants.MessageFields.text] as String!
             cell.textLabel?.text = name! + ": " + text!
@@ -222,6 +222,16 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     }
     
     @IBAction func signOut(_ sender: UIButton) {
+        
+        showConfirmationAlert(title: "Confirmation", message: "Sign Out?", success: { () -> Void in
+            self.signOutHelper()
+        }) { () -> Void in
+            print("user canceled")
+        }
+    
+    }
+    
+    func signOutHelper() {
         let firebaseAuth = FIRAuth.auth()
         do{
             try firebaseAuth?.signOut()
@@ -230,6 +240,7 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         } catch let signOutError as NSError {
             print("Error signing out: \(signOutError.localizedDescription)")
         }
+
     }
     
     func showAlert(withTitle title:String, message:String) {
@@ -241,4 +252,29 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func showConfirmationAlert(title: String!, message: String!,success: (() -> Void)? , cancel: (() -> Void)?) {
+        DispatchQueue.main.async(execute: {
+            let alertController = UIAlertController(title:title,
+                                                    message: message,
+                                                    preferredStyle: UIAlertControllerStyle.alert)
+            
+            let cancelLocalized = NSLocalizedString("Cancel", tableName: "activity", comment:"")
+            let okLocalized = NSLocalizedString("OK", tableName: "Localizable", comment:"")
+            
+            let cancelAction: UIAlertAction = UIAlertAction(title: cancelLocalized,
+                                                            style: .cancel) {
+                                                                action -> Void in cancel?()
+            }
+            let successAction: UIAlertAction = UIAlertAction(title: okLocalized,
+                                                             style: .default) {
+                                                                action -> Void in success?()
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(successAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        })
+    }
+    
 }
