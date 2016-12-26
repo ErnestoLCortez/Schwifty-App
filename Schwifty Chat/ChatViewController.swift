@@ -113,11 +113,12 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
-        let cell = self.clientTable .dequeueReusableCell(withIdentifier: "tableViewCell", for: indexPath)
+        let cell = self.clientTable .dequeueReusableCell(withIdentifier: "ClientCell", for: indexPath)
         // Unpack message from Firebase DataSnapshot
         let messageSnapshot: FIRDataSnapshot! = self.messages[indexPath.row]
         let message = messageSnapshot.value as! Dictionary<String, String>
         let name = message[Constants.MessageFields.name] as String!
+        //Process if message has an image
         if let imageURL = message[Constants.MessageFields.imageURL] {
             if imageURL.hasPrefix("gs://") {
                 FIRStorage.storage().reference(forURL: imageURL).data(withMaxSize: INT64_MAX){ (data, error) in
@@ -126,12 +127,16 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
                         return
                     }
                     cell.imageView?.image = UIImage.init(data: data!)
+                    if let imageCell = cell as? ImageTableViewCell {
+                        imageCell.imageUrl = URL(string: imageURL) as NSURL?
+                    }
+                    
                 }
             } else if let URL = URL(string: imageURL), let data = try? Data(contentsOf: URL) {
                 cell.imageView?.image = UIImage.init(data: data)
             }
             cell.textLabel?.text = "sent by: \(name!)"
-        } else {
+        } else { //Normal text only message
             let text = message[Constants.MessageFields.text] as String!
             cell.textLabel?.text = name! + ": " + text!
             cell.imageView?.image = UIImage(named: "ic_account_circle")
@@ -140,6 +145,26 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
             }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Start segue, pass cell information
+        
+        performSegue(withIdentifier: "show image", sender: self.tableView(self.clientTable, cellForRowAt: indexPath))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let identifier = segue.identifier {
+            if identifier == "show image" {
+                if let ivc = segue.destination as? ImageViewController,
+                    let cell = sender as? ImageTableViewCell {
+                    
+                    ivc.imageURL = cell.imageUrl
+                    
+                }
+            }
+        }
     }
     
     // UITextViewDelegate protocol methods

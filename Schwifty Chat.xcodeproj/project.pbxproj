@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		624732C5D6EB2E99E3D89100 /* Pods_Schwifty_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE5E8878DA6CA4F9466BC4 /* Pods_Schwifty_Chat.framework */; };
+		DE03722D1E11BA1D004A052D /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03722C1E11BA1D004A052D /* ImageTableViewCell.swift */; };
 		DE208AC91E0C75A500DAEB31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */; };
 		DE208AD01E0C75A600DAEB31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE208ACF1E0C75A600DAEB31 /* Assets.xcassets */; };
 		DE208AD31E0C75A600DAEB31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE208AD11E0C75A600DAEB31 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,7 @@
 		2BBE5E8878DA6CA4F9466BC4 /* Pods_Schwifty_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schwifty_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E34D5C6E1D76A17ABA18882 /* Pods-Schwifty Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schwifty Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Schwifty Chat/Pods-Schwifty Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		C33CEF0D77F49E99D94055CD /* Pods-Schwifty Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schwifty Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Schwifty Chat/Pods-Schwifty Chat.release.xcconfig"; sourceTree = "<group>"; };
+		DE03722C1E11BA1D004A052D /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		DE208AC51E0C75A500DAEB31 /* Schwifty Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Schwifty Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE208AC81E0C75A500DAEB31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE208ACF1E0C75A600DAEB31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,10 +93,11 @@
 			children = (
 				DE208AE91E0DB8D900DAEB31 /* ChatViewController.swift */,
 				DE208AE71E0DB5BC00DAEB31 /* Main.storyboard */,
-				DE208AE31E0DB06E00DAEB31 /* ImageViewController.swift */,
 				DE208AE51E0DB0D800DAEB31 /* ChatDetailTableViewController.swift */,
 				DE208ADB1E0CA0EC00DAEB31 /* SignInViewController.swift */,
 				DE208ADD1E0CA21800DAEB31 /* HelperObjects.swift */,
+				DE208AE31E0DB06E00DAEB31 /* ImageViewController.swift */,
+				DE03722C1E11BA1D004A052D /* ImageTableViewCell.swift */,
 				DE208ADA1E0C75FD00DAEB31 /* Supporting Files */,
 			);
 			path = "Schwifty Chat";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE03722D1E11BA1D004A052D /* ImageTableViewCell.swift in Sources */,
 				DE208AE61E0DB0D800DAEB31 /* ChatDetailTableViewController.swift in Sources */,
 				DE208AC91E0C75A500DAEB31 /* AppDelegate.swift in Sources */,
 				DE208ADC1E0CA0EC00DAEB31 /* SignInViewController.swift in Sources */,

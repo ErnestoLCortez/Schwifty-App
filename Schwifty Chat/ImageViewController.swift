@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 @objc(ImageViewController)
 class ImageViewController: UIViewController, UIScrollViewDelegate {
+    
     
     var imageURL: NSURL? {
         didSet {
@@ -19,21 +21,26 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+
     
     private func fetchImage() {
-        if let url = imageURL {
+        if let url = imageURL?.absoluteString {
             spinner?.startAnimating()
             DispatchQueue.global().async(group: DispatchGroup.init(), qos: DispatchQoS.userInitiated, flags: DispatchWorkItemFlags(rawValue: 0)) {
-                let loadedImageData = NSData(contentsOf: url as URL)
-                DispatchQueue.main.async {
-                    if url == self.imageURL {
-                        if let imageData = loadedImageData {
-                            self.image = UIImage(data: imageData as Data)
-                        } else {
-                            self.spinner?.stopAnimating()
+                
+                if url.hasPrefix("gs://") {
+                    FIRStorage.storage().reference(forURL: url).data(withMaxSize: INT64_MAX){ (data, error) in
+                        if let error = error {
+                            print("Error downloading: \(error)")
+                            return
                         }
-                    } else { NSLog("\(Error.downloadImage) + \(url)") }
+                        self.image = UIImage.init(data: data!)
+                        
+                    }
+                } else if let URL = URL(string: url), let data = try? Data(contentsOf: URL) {
+                    self.image = UIImage.init(data: data)
                 }
+                
             }
         }
     }
@@ -72,7 +79,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    private var image: UIImage? {
+    public var image: UIImage? {
         get { return imageView.image }
         set {
             imageView.image = newValue
