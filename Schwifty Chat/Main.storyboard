@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DHD-HU-kCB">
-                                <rect key="frame" x="12" y="68" width="351" height="447"/>
+                                <rect key="frame" x="12" y="68" width="351" height="484"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClientCell" id="f9j-WJ-CnU" customClass="ImageTableViewCell" customModule="SchwiftyChat" customModuleProvider="target">
@@ -164,7 +164,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlk-XX-9Qp">
-                                        <rect key="frame" x="210" y="16" width="88" height="30"/>
+                                        <rect key="frame" x="210" y="5" width="88" height="30"/>
                                         <state key="normal" title="Fresh Config"/>
                                         <connections>
                                             <action selector="didPressFreshConfig:" destination="uMT-A3-F60" eventType="touchUpInside" id="Sc1-ex-uRq"/>
@@ -174,29 +174,20 @@
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="6uD-8t-BBQ" firstAttribute="centerY" secondItem="VRr-Ou-qfp" secondAttribute="centerY" id="Cja-2X-Ezj"/>
-                                    <constraint firstItem="Vlk-XX-9Qp" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="top" constant="16" id="FH2-nM-DGh"/>
                                     <constraint firstItem="CUI-XH-ETH" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="top" constant="3" id="Stl-Ss-p7a"/>
                                     <constraint firstItem="6uD-8t-BBQ" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="top" constant="10" id="cKq-aI-Vqd"/>
                                     <constraint firstItem="CUI-XH-ETH" firstAttribute="leading" secondItem="VRr-Ou-qfp" secondAttribute="leading" id="eXU-6q-3fR"/>
+                                    <constraint firstItem="Vlk-XX-9Qp" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="top" constant="5" id="fW2-wV-NCw"/>
                                     <constraint firstAttribute="trailing" secondItem="6uD-8t-BBQ" secondAttribute="trailing" constant="4" id="iX3-rZ-9ou"/>
                                     <constraint firstItem="6uD-8t-BBQ" firstAttribute="leading" secondItem="Vlk-XX-9Qp" secondAttribute="trailing" constant="8" symbolic="YES" id="js5-pa-pA6"/>
                                     <constraint firstAttribute="height" constant="40" id="lcD-f1-KBk"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="0.0" height="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Chat Message" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="STK-FK-gn5" userLabel="TextField">
-                                <rect key="frame" x="44" y="523" width="265" height="21"/>
+                                <rect key="frame" x="44" y="566" width="265" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -204,7 +195,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-8J-WZ5">
-                                <rect key="frame" x="12" y="521.5" width="24" height="24"/>
+                                <rect key="frame" x="12" y="563" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1IF-84-GVk"/>
                                 </constraints>
@@ -213,8 +204,11 @@
                                     <action selector="didTapAddPhoto:" destination="uMT-A3-F60" eventType="touchUpInside" id="vaN-73-ycr"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Mmi-nD-0X7" userLabel="spinner">
+                                <rect key="frame" x="339" y="595" width="20" height="20"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv1-bL-LxQ">
-                                <rect key="frame" x="317" y="523" width="46" height="30"/>
+                                <rect key="frame" x="313" y="560" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="U9l-n9-tYg"/>
                                 </constraints>
@@ -227,30 +221,33 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nhb-8J-WZ5" firstAttribute="leading" secondItem="DHD-HU-kCB" secondAttribute="leading" id="2gb-4Y-0nV"/>
+                            <constraint firstItem="X8X-0F-Bdi" firstAttribute="top" secondItem="Mmi-nD-0X7" secondAttribute="bottom" constant="8" id="3Tn-KN-slo"/>
                             <constraint firstItem="STK-FK-gn5" firstAttribute="leading" secondItem="nhb-8J-WZ5" secondAttribute="trailing" constant="8" symbolic="YES" id="47z-nR-8nx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VRr-Ou-qfp" secondAttribute="trailing" constant="-20" id="7LE-0W-xWN"/>
                             <constraint firstItem="DHD-HU-kCB" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-4" id="8ff-Rm-C4p"/>
-                            <constraint firstItem="STK-FK-gn5" firstAttribute="centerY" secondItem="nhb-8J-WZ5" secondAttribute="centerY" id="MG1-Zi-pOg"/>
-                            <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="DHD-HU-kCB" secondAttribute="bottom" constant="8" symbolic="YES" id="VzZ-Uw-ID6"/>
-                            <constraint firstItem="X8X-0F-Bdi" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="bottom" constant="70" id="bLt-MX-wY3"/>
+                            <constraint firstItem="STK-FK-gn5" firstAttribute="centerY" secondItem="nhb-8J-WZ5" secondAttribute="centerY" constant="1.5" id="MG1-Zi-pOg"/>
+                            <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="DHD-HU-kCB" secondAttribute="bottom" constant="14" id="VzZ-Uw-ID6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mmi-nD-0X7" secondAttribute="trailing" id="dG4-2F-FSt"/>
                             <constraint firstItem="DHD-HU-kCB" firstAttribute="top" secondItem="VRr-Ou-qfp" secondAttribute="bottom" constant="8" id="der-Ny-LDv"/>
-                            <constraint firstItem="wv1-bL-LxQ" firstAttribute="leading" secondItem="STK-FK-gn5" secondAttribute="trailing" constant="8" symbolic="YES" id="e7L-dI-PkH"/>
-                            <constraint firstItem="wv1-bL-LxQ" firstAttribute="trailing" secondItem="DHD-HU-kCB" secondAttribute="trailing" id="jLu-32-ERV"/>
+                            <constraint firstItem="wv1-bL-LxQ" firstAttribute="leading" secondItem="STK-FK-gn5" secondAttribute="trailing" constant="4" id="e7L-dI-PkH"/>
+                            <constraint firstItem="wv1-bL-LxQ" firstAttribute="trailing" secondItem="DHD-HU-kCB" secondAttribute="trailing" constant="-4" id="jLu-32-ERV"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="leading" secondItem="4Dk-Kp-xdq" secondAttribute="leadingMargin" constant="-20" id="lXP-yU-4e8"/>
                             <constraint firstItem="VRr-Ou-qfp" firstAttribute="top" secondItem="yPS-DS-Klf" secondAttribute="bottom" id="lgZ-Wt-SEn"/>
-                            <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="top" id="spZ-ka-Cxy"/>
+                            <constraint firstItem="Mmi-nD-0X7" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="bottom" constant="5" id="oh7-Lc-XFY"/>
+                            <constraint firstItem="STK-FK-gn5" firstAttribute="top" secondItem="wv1-bL-LxQ" secondAttribute="top" constant="6" id="spZ-ka-Cxy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DHD-HU-kCB" secondAttribute="trailing" constant="-4" id="xhU-Sl-tIr"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="clientTable" destination="DHD-HU-kCB" id="VEb-Fb-vE0"/>
                         <outlet property="sendButton" destination="wv1-bL-LxQ" id="NjU-mG-4FR"/>
+                        <outlet property="spinner" destination="Mmi-nD-0X7" id="CFJ-eQ-Zqt"/>
                         <outlet property="textField" destination="STK-FK-gn5" id="NHK-Z3-xOt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLT-eE-jeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="852"/>
+            <point key="canvasLocation" x="605.60000000000002" y="851.42428785607206"/>
         </scene>
         <!--ChatDetailTableViewController-->
         <scene sceneID="Rfp-b8-uNx">
@@ -292,6 +289,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n0G-0n-2eJ">
+                                <rect key="frame" x="16" y="58" width="343" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frS-qM-pnd">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="554"/>
+                                    </scrollView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3B-PC-srh">
                                 <rect key="frame" x="16" y="20" width="48" height="30"/>
                                 <state key="normal" title="&lt; Back"/>
@@ -303,15 +309,6 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PeD-zr-6oX">
                                 <rect key="frame" x="339" y="28" width="20" height="20"/>
                             </activityIndicatorView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n0G-0n-2eJ">
-                                <rect key="frame" x="16" y="58" width="343" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frS-qM-pnd">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="554"/>
-                                    </scrollView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

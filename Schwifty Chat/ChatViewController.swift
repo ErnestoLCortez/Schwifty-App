@@ -119,8 +119,10 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         let message = messageSnapshot.value as! Dictionary<String, String>
         let name = message[Constants.MessageFields.name] as String!
         //Process if message has an image
+        spinner?.startAnimating()
         if let imageURL = message[Constants.MessageFields.imageURL] {
             if imageURL.hasPrefix("gs://") {
+                
                 FIRStorage.storage().reference(forURL: imageURL).data(withMaxSize: INT64_MAX){ (data, error) in
                     if let error = error {
                         print("Error downloading: \(error)")
@@ -130,10 +132,11 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
                     if let imageCell = cell as? ImageTableViewCell {
                         imageCell.imageUrl = URL(string: imageURL) as NSURL?
                     }
-                    
+                    self.spinner?.stopAnimating()
                 }
             } else if let URL = URL(string: imageURL), let data = try? Data(contentsOf: URL) {
                 cell.imageView?.image = UIImage.init(data: data)
+                self.spinner?.stopAnimating()
             }
             cell.textLabel?.text = "sent by: \(name!)"
         } else { //Normal text only message
@@ -245,6 +248,7 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion:nil)
     }
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBAction func signOut(_ sender: UIButton) {
         
