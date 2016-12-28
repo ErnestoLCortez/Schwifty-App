@@ -23,7 +23,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     }
 
     @IBAction func backbutton(_ sender: UIButton) {
-        performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
+        performSegue(withIdentifier: "back to chat", sender: sender)
     }
     
     private func fetchImage() {
@@ -38,7 +38,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
                             return
                         }
                         self.image = UIImage.init(data: data!)
-                        
+                        self.spinner?.stopAnimating()
                     }
                 } else if let URL = URL(string: url), let data = try? Data(contentsOf: URL) {
                     self.image = UIImage.init(data: data)
@@ -87,7 +87,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
-            //scrollView?.contentSize = imageView.frame.size
+            scrollView?.contentSize = imageView.frame.size
             spinner?.stopAnimating()
             scrollViewDidScrollOrZoom = false
             autoScale()

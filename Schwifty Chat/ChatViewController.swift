@@ -40,7 +40,7 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     }
     
     deinit {
-        self.ref.child("messages").removeObserver(withHandle: _refHandle)
+        //self.ref.child("messages").removeObserver(withHandle: _refHandle)
     }
     
     func configureDatabase() {

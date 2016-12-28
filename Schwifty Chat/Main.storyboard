@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DHD-HU-kCB">
-                                <rect key="frame" x="12" y="68" width="351" height="491"/>
+                                <rect key="frame" x="12" y="68" width="351" height="447"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ClientCell" id="f9j-WJ-CnU" customClass="ImageTableViewCell" customModule="SchwiftyChat" customModuleProvider="target">
@@ -196,7 +196,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Chat Message" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="STK-FK-gn5" userLabel="TextField">
-                                <rect key="frame" x="44" y="567" width="265" height="21"/>
+                                <rect key="frame" x="44" y="523" width="265" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -204,7 +204,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhb-8J-WZ5">
-                                <rect key="frame" x="12" y="565.5" width="24" height="24"/>
+                                <rect key="frame" x="12" y="521.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="1IF-84-GVk"/>
                                 </constraints>
@@ -214,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wv1-bL-LxQ">
-                                <rect key="frame" x="317" y="567" width="46" height="30"/>
+                                <rect key="frame" x="317" y="523" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="U9l-n9-tYg"/>
                                 </constraints>
@@ -250,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dLT-eE-jeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="467.3163418290855"/>
+            <point key="canvasLocation" x="606" y="852"/>
         </scene>
         <!--ChatDetailTableViewController-->
         <scene sceneID="Rfp-b8-uNx">
@@ -278,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqi-zB-hnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="64"/>
+            <point key="canvasLocation" x="1830" y="-63"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="WcM-BN-yUh">
@@ -292,31 +292,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frS-qM-pnd">
-                                <rect key="frame" x="16" y="140" width="343" height="387"/>
-                            </scrollView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PeD-zr-6oX">
-                                <rect key="frame" x="184" y="323" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3B-PC-srh">
-                                <rect key="frame" x="16" y="93" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3B-PC-srh">
+                                <rect key="frame" x="16" y="20" width="48" height="30"/>
                                 <state key="normal" title="&lt; Back"/>
                                 <connections>
                                     <action selector="backbutton:" destination="6FI-zr-Kv8" eventType="touchUpInside" id="Wzv-TS-VV8"/>
+                                    <segue destination="uMT-A3-F60" kind="show" identifier="back to chat" id="O1K-LJ-uw1"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="PeD-zr-6oX">
+                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n0G-0n-2eJ">
+                                <rect key="frame" x="16" y="58" width="343" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frS-qM-pnd">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="554"/>
+                                    </scrollView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="frS-qM-pnd" firstAttribute="centerY" secondItem="6ed-z3-GPd" secondAttribute="centerY" id="6Tz-yJ-4MF"/>
-                            <constraint firstItem="54X-1L-S6O" firstAttribute="top" secondItem="frS-qM-pnd" secondAttribute="bottom" constant="96" id="A3l-0P-qX6"/>
-                            <constraint firstAttribute="bottom" secondItem="PeD-zr-6oX" secondAttribute="bottom" constant="324" id="ReE-Pj-af9"/>
-                            <constraint firstItem="PeD-zr-6oX" firstAttribute="leading" secondItem="6ed-z3-GPd" secondAttribute="leading" constant="184" id="VIr-9M-HqU"/>
-                            <constraint firstAttribute="trailing" secondItem="PeD-zr-6oX" secondAttribute="trailing" constant="171" id="Z0o-SY-dSr"/>
-                            <constraint firstItem="frS-qM-pnd" firstAttribute="trailing" secondItem="6ed-z3-GPd" secondAttribute="trailingMargin" id="abG-bM-CsX"/>
-                            <constraint firstItem="PeD-zr-6oX" firstAttribute="top" secondItem="6ed-z3-GPd" secondAttribute="top" constant="323" id="ce3-r6-kkt"/>
-                            <constraint firstItem="frS-qM-pnd" firstAttribute="leading" secondItem="6ed-z3-GPd" secondAttribute="leadingMargin" id="vSE-Ir-sSd"/>
+                            <constraint firstItem="k3B-PC-srh" firstAttribute="top" secondItem="IFf-dw-Aqh" secondAttribute="bottom" id="23H-Iy-Xii"/>
+                            <constraint firstItem="PeD-zr-6oX" firstAttribute="top" secondItem="IFf-dw-Aqh" secondAttribute="bottom" constant="8" id="6BJ-1w-wt9"/>
+                            <constraint firstItem="frS-qM-pnd" firstAttribute="top" secondItem="PeD-zr-6oX" secondAttribute="bottom" constant="10" id="6l4-dV-ZV4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="frS-qM-pnd" secondAttribute="trailing" id="HFA-dh-0Bd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="frS-qM-pnd" secondAttribute="leading" id="UDA-oU-q1N"/>
+                            <constraint firstItem="frS-qM-pnd" firstAttribute="top" secondItem="k3B-PC-srh" secondAttribute="bottom" constant="8" id="VpN-FI-6l4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="k3B-PC-srh" secondAttribute="leading" id="ah5-YO-rDo"/>
+                            <constraint firstItem="54X-1L-S6O" firstAttribute="top" secondItem="frS-qM-pnd" secondAttribute="bottom" constant="11" id="gYC-K2-dAn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PeD-zr-6oX" secondAttribute="trailing" id="t9D-ag-Vrj"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -328,10 +335,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3b-J9-25C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1640.8" y="827.13643178410803"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="704.79760119940033"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_add_a_photo" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="O1K-LJ-uw1"/>
+    </inferredMetricsTieBreakers>
 </document>

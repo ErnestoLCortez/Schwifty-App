@@ -28,7 +28,7 @@ class SignInViewController: UIViewController {
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
+                self.showAlert(title: "Schwifty Chat", message: error.localizedDescription)
                 return;
             }
             self.signedIn(user)
@@ -41,7 +41,7 @@ class SignInViewController: UIViewController {
         }
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
+                self.showAlert(title: "Schwifty Chat", message: error.localizedDescription)
                 return
             }
             self.setDisplayName(user!)
@@ -53,7 +53,7 @@ class SignInViewController: UIViewController {
         changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
         changeRequest.commitChanges(){ (error) in
             if let error = error {
-                self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
+                self.showAlert(title: "Schwifty Chat", message: error.localizedDescription)
                 return
             }
             self.signedIn(FIRAuth.auth()?.currentUser)
@@ -69,7 +69,7 @@ class SignInViewController: UIViewController {
             }
             FIRAuth.auth()?.sendPasswordReset(withEmail: userInput!) { (error) in
                 if let error = error {
-                    self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
+                    self.showAlert(title: "Schwifty Chat", message: error.localizedDescription)
                     return
                 }
             }
