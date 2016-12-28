@@ -23,7 +23,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     }
 
     @IBAction func backbutton(_ sender: UIButton) {
-        performSegue(withIdentifier: "back to chat", sender: sender)
+        dismiss(animated: true, completion: nil)
     }
     
     private func fetchImage() {
