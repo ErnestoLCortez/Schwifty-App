@@ -188,10 +188,13 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         if let ident = identifier {
             if ident == "show image" {
                 if(!self.imagesClickable){
+                    showAlert(withTitle: "Schwifty Chat", message: "Images not done loading.. please wait..")
                     return false;
                 }
                 if let cell = sender as? ImageTableViewCell {
-                    return true
+                    if let i = cell.imageUrl{
+                        return true
+                    }
                 }
             }
         }
