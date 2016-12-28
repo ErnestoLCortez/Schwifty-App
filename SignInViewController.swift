@@ -25,10 +25,11 @@ class SignInViewController: UIViewController {
         guard let email = emailField.text, let password = passwordField.text else {
             return
         }
+        
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                print(error.localizedDescription)
-                return
+                self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
+                return;
             }
             self.signedIn(user)
         }
@@ -40,7 +41,7 @@ class SignInViewController: UIViewController {
         }
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                print(error.localizedDescription)
+                self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
                 return
             }
             self.setDisplayName(user!)
@@ -52,7 +53,7 @@ class SignInViewController: UIViewController {
         changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
         changeRequest.commitChanges(){ (error) in
             if let error = error {
-                print(error.localizedDescription)
+                self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
                 return
             }
             self.signedIn(FIRAuth.auth()?.currentUser)
@@ -68,7 +69,7 @@ class SignInViewController: UIViewController {
             }
             FIRAuth.auth()?.sendPasswordReset(withEmail: userInput!) { (error) in
                 if let error = error {
-                    print(error.localizedDescription)
+                    self.showAlert(title: "Schwift Chat", message: error.localizedDescription)
                     return
                 }
             }
@@ -76,6 +77,16 @@ class SignInViewController: UIViewController {
         prompt.addTextField(configurationHandler: nil)
         prompt.addAction(okAction)
         present(prompt, animated: true, completion: nil);
+    }
+    
+    func showAlert(title:String, message:String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title,
+                                          message: message, preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
+            alert.addAction(dismissAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func signedIn(_ user: FIRUser?) {

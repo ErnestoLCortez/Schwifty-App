@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Schwifty Chat.xcodeproj">
+      location = "group:/Users/nathanieldavidson/Schwifty-Chat/SchwiftyChat.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
