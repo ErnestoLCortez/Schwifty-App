@@ -41,6 +41,9 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     
     deinit {
         //self.ref.child("messages").removeObserver(withHandle: _refHandle)
+        self.loadedImages=0
+        self.loadingImages=0
+        self.imagesClickable=false
     }
     
     func configureDatabase() {
@@ -110,6 +113,9 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
+    var loadingImages = 0
+    var loadedImages = 0
+    var imagesClickable = false
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue cell
@@ -119,8 +125,11 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
         let message = messageSnapshot.value as! Dictionary<String, String>
         let name = message[Constants.MessageFields.name] as String!
         //Process if message has an image
-        spinner?.startAnimating()
         if let imageURL = message[Constants.MessageFields.imageURL] {
+            if(loadingImages==0){
+                spinner?.startAnimating()
+            }
+            loadingImages=loadingImages+1
             if imageURL.hasPrefix("gs://") {
                 
                 FIRStorage.storage().reference(forURL: imageURL).data(withMaxSize: INT64_MAX){ (data, error) in
@@ -132,11 +141,19 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
                     if let imageCell = cell as? ImageTableViewCell {
                         imageCell.imageUrl = URL(string: imageURL) as NSURL?
                     }
-                    self.spinner?.stopAnimating()
+                    self.loadedImages=self.loadedImages+1
+                    if(self.loadedImages==self.loadingImages){
+                        self.imagesClickable=true
+                        self.spinner?.stopAnimating()
+                    }
                 }
             } else if let URL = URL(string: imageURL), let data = try? Data(contentsOf: URL) {
                 cell.imageView?.image = UIImage.init(data: data)
-                self.spinner?.stopAnimating()
+                self.loadedImages=self.loadedImages+1
+                if(self.loadedImages==self.loadingImages){
+                    self.imagesClickable=true
+                    self.spinner?.stopAnimating()
+                }
             }
             cell.textLabel?.text = "sent by: \(name!)"
         } else { //Normal text only message
@@ -152,8 +169,7 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Start segue, pass cell information
-        
-        performSegue(withIdentifier: "show image", sender: self.tableView(self.clientTable, cellForRowAt: indexPath))
+        //performSegue(withIdentifier: "show image", sender: self.tableView(self.clientTable, cellForRowAt: indexPath))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -162,14 +178,25 @@ UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDele
             if identifier == "show image" {
                 if let ivc = segue.destination as? ImageViewController,
                     let cell = sender as? ImageTableViewCell {
-                    
                     ivc.imageURL = cell.imageUrl
                     
                 }
             }
         }
     }
-    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "show image" {
+                if(!self.imagesClickable){
+                    return false;
+                }
+                if let cell = sender as? ImageTableViewCell {
+                    return true
+                }
+            }
+        }
+        return false
+    }
     // UITextViewDelegate protocol methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return true }
